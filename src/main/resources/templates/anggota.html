@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Daftar Anggota</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<nav>
+    <span class="brand">Perpustakaan</span>
+    <a class="menu" th:href="@{/buku}">Buku</a>
+    <a class="menu active" th:href="@{/anggota}">Anggota</a>
+</nav>
+
+<div class="container">
+
+    <div class="card">
+        <h1>Daftar Anggota</h1>
+
+        <form th:action="@{/anggota}" method="get">
+            <input name="kata" th:value="${kata}" placeholder="Cari nama">
+            <button type="submit">Cari</button>
+        </form>
+
+        <p class="kosong" th:if="${#lists.isEmpty(daftarAnggota)}">Data tidak ditemukan.</p>
+
+        <table th:unless="${#lists.isEmpty(daftarAnggota)}">
+            <tr><th>ID</th><th>Nama</th><th>Batas Pinjam</th></tr>
+            <tr th:each="a : ${daftarAnggota}">
+                <td th:text="${a.idAnggota}">A001</td>
+                <td th:text="${a.nama}">Nama</td>
+                <td th:text="${a.batasPinjam}">0</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card">
+        <h2>Tambah Anggota</h2>
+        <form th:action="@{/anggota}" method="post">
+            <input name="idAnggota" placeholder="ID" required>
+            <input name="nama" placeholder="Nama" required>
+            <input name="batasPinjam" type="number" min="0" value="2">
+            <button type="submit">Simpan</button>
+        </form>
+    </div>
+
+    <a class="kembali" th:href="@{/buku}">← Ke Daftar Buku</a>
+
+</div>
+</body>
+</html>

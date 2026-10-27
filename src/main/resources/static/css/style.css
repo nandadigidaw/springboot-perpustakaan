@@ -1,0 +1,158 @@
+:root {
+    --biru-tua: #0b3d91;
+    --biru: #1e6fe0;
+    --biru-muda: #e8f1fd;
+    --biru-border: #c9dcf7;
+    --teks: #1d2b44;
+    --putih: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+    background: var(--biru-muda);
+    color: var(--teks);
+}
+
+/* ===== Menu atas ===== */
+nav {
+    background: var(--biru-tua);
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 8px rgba(11, 61, 145, 0.3);
+}
+
+nav .brand {
+    color: var(--putih);
+    font-weight: 700;
+    font-size: 18px;
+    margin-right: 24px;
+    padding: 16px 0;
+}
+
+nav a.menu {
+    color: #cfe0fb;
+    text-decoration: none;
+    padding: 18px 16px;
+    font-weight: 600;
+    border-bottom: 3px solid transparent;
+}
+
+nav a.menu:hover { color: var(--putih); }
+
+nav a.menu.active {
+    color: var(--putih);
+    border-bottom-color: #6fa8ff;
+}
+
+/* ===== Isi halaman ===== */
+.container {
+    max-width: 800px;
+    margin: 32px auto;
+    padding: 0 16px;
+}
+
+.card {
+    background: var(--putih);
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 10px rgba(30, 111, 224, 0.12);
+}
+
+h1 {
+    margin: 0 0 16px;
+    color: var(--biru-tua);
+    font-size: 26px;
+}
+
+h2 {
+    margin: 0 0 16px;
+    color: var(--biru-tua);
+    font-size: 20px;
+}
+
+/* ===== Tabel ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+th {
+    background: var(--biru);
+    color: var(--putih);
+    text-align: left;
+    padding: 12px 14px;
+}
+
+td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--biru-border);
+}
+
+tr:nth-child(even) td { background: #f5f9ff; }
+tr:hover td { background: var(--biru-muda); }
+
+/* ===== Form ===== */
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+input {
+    padding: 10px 12px;
+    border: 1px solid var(--biru-border);
+    border-radius: 8px;
+    font-size: 14px;
+    flex: 1;
+    min-width: 120px;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--biru);
+    box-shadow: 0 0 0 3px rgba(30, 111, 224, 0.2);
+}
+
+button {
+    padding: 10px 22px;
+    background: var(--biru);
+    color: var(--putih);
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+button:hover { background: var(--biru-tua); }
+
+/* ===== Lain-lain ===== */
+.kosong {
+    color: #5d7394;
+    font-style: italic;
+}
+
+.badge-habis {
+    background: #fde8e8;
+    color: #b42318;
+    padding: 2px 10px;
+    border-radius: 999px;
+    font-weight: 600;
+}
+
+a.kembali {
+    color: var(--biru);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+a.kembali:hover { text-decoration: underline; }
